@@ -44,7 +44,7 @@ The project uses an **ESP32 microcontroller** for real-time monitoring and cloud
 | Relay Module | Machine power control |
 | Buzzer | Emergency alert |
 | LEDs | Status indication |
-| LCD Display | Live sensor display |
+
 
 ---
 
@@ -76,17 +76,18 @@ The project uses an **ESP32 microcontroller** for real-time monitoring and cloud
 
 # 🔌 Pin Configuration
 
-| Device | ESP32 Pin |
+| Component | ESP32 GPIO Pin |
 |---|---|
-| SW-420 | GPIO 14 |
-| Flame Sensor | GPIO 13 |
-| KY-037 | GPIO 34 |
-| ACS712 | GPIO 35 |
-| DS18B20 | GPIO 4 |
-| Relay Module | GPIO 26 |
-| Buzzer | GPIO 27 |
-| LCD SDA | GPIO 21 |
-| LCD SCL | GPIO 22 |
+| Flame Sensor | GPIO 33 |
+| MQ135 Gas Sensor | GPIO 34 |
+| Sound Sensor | GPIO 35 |
+| Water Leakage Sensor | GPIO 32 |
+| SW-420 Vibration Sensor | GPIO 23 |
+| Sound Status LED | GPIO 26 |
+| Temperature Status LED | GPIO 13 |
+| DHT Sensor | GPIO 4 |
+| Relay Module | GPIO 27 |
+| ACS712 Current Sensor | GPIO 25 |
 
 > Pins can be modified according to the circuit design.
 
@@ -100,12 +101,6 @@ Used for:
 - Cloud monitoring
 - Data logging
 
-## Blynk
-Used for:
-- Mobile dashboard
-- Remote monitoring
-- Live alerts
-
 ---
 
 # 🚨 Safety Logic
@@ -114,7 +109,7 @@ Used for:
 |---|---|
 | Excess Current | Relay OFF |
 | Fire Detected | Alarm + Relay OFF |
-| High Vibration | Warning Alert |
+|  Vibration | Warning Alert |
 | High Noise | Notification |
 | Liquid Leakage | Emergency Alert |
 | High Temperature | Safety Warning |
@@ -125,7 +120,6 @@ Used for:
 
 - Arduino IDE
 - Firebase Realtime Database
-- Blynk IoT Platform
 
 ---
 
@@ -145,8 +139,7 @@ Used for:
 # 🚀 Future Improvements
 
 - AI-based predictive maintenance
-- SMS and email alerts
-- Mobile application
+- SMS and email alert
 - Industrial automation integration
 - Advanced analytics dashboard
 
